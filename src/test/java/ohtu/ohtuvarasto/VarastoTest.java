@@ -19,7 +19,12 @@ public class VarastoTest {
     public void setUp() {
         varasto = new Varasto(10);
     }
-
+    @Test
+    public void virheellinenVarastoOnTyhja() {
+        Varasto virheellinenVarasto = new Varasto(-3);
+        assertEquals(0, virheellinenVarasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(0, virheellinenVarasto.getTilavuus(), vertailuTarkkuus);
+    }
     @Test
     public void konstruktoriLuoTyhjanVaraston() {
         assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
