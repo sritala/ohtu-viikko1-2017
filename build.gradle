@@ -30,12 +30,8 @@ dependencies {
 // Define the main class for the application
 mainClassName = 'ohtu.ohtuvarasto.Main'
 
-jar { 
-  manifest {
-    attributes 'Main-Class': 'ohtu.ohtuvarasto.Main'
-}
-}
 apply plugin: "jacoco"
+
 
 jacocotestReport {
   reports {
@@ -43,3 +39,6 @@ jacocotestReport {
      html.enabled true
 }
 }
+run  {
+standardInput = System.in
+} 
